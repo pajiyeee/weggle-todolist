@@ -20,7 +20,7 @@ const Pagination = ({ todoListTotal, limit, page, setPage }: Props) => {
     <PaginationWrap>
       {todoListTotal > 0 && (
         <PageBtn onClick={() => setPage(page - 1)} disabled={page === 1}>
-          prev
+          {` <`}
         </PageBtn>
       )}
 
@@ -32,7 +32,7 @@ const Pagination = ({ todoListTotal, limit, page, setPage }: Props) => {
 
       {todoListTotal > 0 && (
         <PageBtn onClick={() => setPage(page + 1)} disabled={page === numPages}>
-          next
+          {`>`}
         </PageBtn>
       )}
     </PaginationWrap>
@@ -43,9 +43,14 @@ export default Pagination;
 
 const PaginationWrap = styled.div`
   margin: 20px auto;
+  align-items: center;
 `;
 
 const PageBtn = styled.button`
-  margin: 10px;
-  padding: 8px;
+  text-align: center;
+  margin: 20px 12px 0 12px;
+  padding: 0 12px;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
 `;

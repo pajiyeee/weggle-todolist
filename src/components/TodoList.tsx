@@ -16,20 +16,22 @@ const TodoList = ({ todoList, setTodoList }: Props) => {
 
   return (
     <TodoListItems>
-      {todoList.slice(offset, offset + limit).map(item => (
-        <TodoListItem
-          key={item.id}
-          id={item.id}
-          value={item.value}
-          setTodoList={setTodoList}
+      <Center>
+        {todoList.slice(offset, offset + limit).map(item => (
+          <TodoListItem
+            key={item.id}
+            id={item.id}
+            value={item.value}
+            setTodoList={setTodoList}
+          />
+        ))}
+        <Pagination
+          todoListTotal={todoList.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
         />
-      ))}
-      <Pagination
-        todoListTotal={todoList.length}
-        limit={limit}
-        page={page}
-        setPage={setPage}
-      />
+      </Center>
     </TodoListItems>
   );
 };
@@ -37,6 +39,10 @@ const TodoList = ({ todoList, setTodoList }: Props) => {
 export default TodoList;
 
 const TodoListItems = styled.ul`
-  width: 100%;
   padding: 0;
+`;
+
+const Center = styled.div`
+  width: 100%;
+  text-align: center;
 `;

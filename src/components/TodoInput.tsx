@@ -38,7 +38,7 @@ const TodoInput = ({ setTodoList }: Props) => {
     <AddTodoWrap>
       <AddTodoInput
         type="text"
-        placeholder="할일을 적어보세요."
+        placeholder="투두리스트를 추가해주세요."
         value={inputValue}
         onChange={e => changeInputValue(e)}
         onKeyPress={e => pressEnter(e)}
@@ -61,13 +61,14 @@ const AddTodoInput = styled.input`
   width: 100%;
   height: 52px;
   margin-right: 6px;
+  border: solid 1px #cccccc;
+  background-color: none;
 `;
 
 const AddTodoBtn = styled.button`
   width: 80px;
   height: 52px;
   border: none;
-  border-radius: 4px;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #ffd220;
+  color: #111111;
 `;
